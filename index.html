@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rifat Dhiya Ul Lail — Web & Network Engineer</title>
+  <meta name="description" content="Portfolio Rifat Dhiya Ul Lail — Mahasiswa Teknik Informatika di Jakarta Global University, Web & Network Engineer." />
+  <meta property="og:title" content="Rifat Dhiya Ul Lail — Portfolio" />
+  <meta property="og:description" content="Mahasiswa Teknik Informatika | Web & Network Engineer. Nulis kode, bikin produk digital, eksplorasi teknologi baru." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rifatdhy.github.io" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Inter,sans-serif' font-weight='700' font-size='16'%3ERD%3C/text%3E%3C/svg%3E" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#F9F8F6" />
+  <meta name="keywords" content="Rifat Dhiya Ul Lail, portfolio, web developer, teknik informatika, Jakarta Global University, frontend, react, nextjs, network" />
+  <meta name="author" content="Rifat Dhiya Ul Lail" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+  <style>
+    @import "tailwindcss";
+    @theme {
+      --font-display: "Outfit", sans-serif;
+      --font-body: "DM Sans", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+      --color-brand-500: #2563EB;
+      --color-brand-600: #1D4ED8;
+      --color-surface: #F9F8F6;
+      --color-surface-alt: #F0EFED;
+      --color-border: #E5E3E0;
+      --color-border-subtle: #D4D2CE;
+      --color-text-primary: #1A1A1A;
+      --color-text-secondary: #737373;
+      --color-text-muted: #A8A5A0;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rifat Dhiya Ul Lail",
+    "jobTitle": "Mahasiswa Teknik Informatika",
+    "url": "https://rifatdhy.github.io",
+    "sameAs": [
+      "https://github.com/Rifatdhy",
+      "https://linkedin.com/in/rifatdhiyaullail",
+      "https://instagram.com/rifatdhy"
+    ],
+    "knowsAbout": ["Web Development", "Frontend", "Network Engineering", "React", "Laravel"],
+    "alumniOf": "Jakarta Global University"
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#tentang" class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#2563EB] focus:text-white focus:rounded-lg focus:outline-none focus:text-sm">Skip ke konten utama</a>
+
+  <div id="progress-bar"></div>
+
+  <!-- NAV -->
+  <nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 md:h-16">
+      <a href="#hero" class="flex items-center gap-2 group" aria-label="Beranda">
+        <span class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs tracking-wide text-white transition-transform duration-300 group-hover:scale-105" style="background:#2563EB;font-family:'Inter',sans-serif">RD</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#proyek" class="nav-link">Proyek</a>
+        <a href="#keahlian" class="nav-link">Keahlian</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </div>
+      <button id="menu-toggle" class="lg:hidden text-[#737373] hover:text-[#1A1A1A] transition-colors p-2 rounded-lg" aria-label="Toggle menu">
+        <i aria-hidden="true" class="ph ph-list text-2xl"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="lg:hidden border-t border-[#E5E3E0] shadow-sm">
+      <div class="px-6 py-4 flex flex-col gap-1">
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#proyek" class="nav-link">Proyek</a>
+        <a href="#keahlian" class="nav-link">Keahlian</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="min-h-[100dvh] flex items-center relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 w-full pt-20 md:pt-24 pb-16">
+      <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-7">
+          <span class="badge mb-6 r">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>
+            Tersedia untuk project
+          </span>
+
+          <h1 class="font-display text-[clamp(2.25rem,6vw,4.5rem)] font-extrabold tracking-tighter leading-[0.9] text-balance r d1">
+            <span class="text-[0.65em] text-[#737393] font-medium tracking-normal block mb-2 font-body">RIFAT</span>
+            DHIYA UL<br/>LAIL
+          </h1>
+
+          <p class="text-[#737373] text-lg md:text-xl max-w-lg leading-relaxed mt-6 r d2">
+            Web &amp; Network Engineer. Nulis kode, ngulik jaringan, eksplorasi teknologi baru.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-8 r d3">
+            <a href="#proyek" class="btn btn-primary glow" data-magnetic>
+              Lihat Proyek
+              <i aria-hidden="true" class="ph ph-arrow-right text-lg"></i>
+            </a>
+            <a href="#kontak" class="btn btn-outline" data-magnetic>
+              Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 hidden md:flex justify-center r d1">
+          <div class="hero-visual float-slow" aria-hidden="true">
+            <svg viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[320px] h-auto">
+              <rect x="40" y="20" width="240" height="150" rx="12" stroke="#2563EB" stroke-width="1.5" fill="rgba(37,99,235,0.03)" />
+              <rect x="52" y="32" width="8" height="8" rx="2" fill="#EF4444" />
+              <rect x="64" y="32" width="8" height="8" rx="2" fill="#F59E0B" />
+              <rect x="76" y="32" width="8" height="8" rx="2" fill="#10B981" />
+              <rect x="52" y="48" width="120" height="4" rx="2" fill="#2563EB" opacity="0.4" />
+              <rect x="52" y="58" width="160" height="4" rx="2" fill="#D4D2CE" />
+              <rect x="52" y="68" width="140" height="4" rx="2" fill="#D4D2CE" />
+              <rect x="52" y="78" width="100" height="4" rx="2" fill="#2563EB" opacity="0.3" />
+              <rect x="52" y="92" width="80" height="4" rx="2" fill="#D4D2CE" />
+              <rect x="52" y="102" width="180" height="4" rx="2" fill="#D4D2CE" />
+              <rect x="52" y="112" width="60" height="4" rx="2" fill="#2563EB" opacity="0.5" />
+              <rect x="52" y="122" width="130" height="4" rx="2" fill="#D4D2CE" />
+              <rect x="52" y="132" width="90" height="4" rx="2" fill="#D4D2CE" />
+              <circle cx="100" cy="240" r="24" stroke="#2563EB" stroke-width="1.5" fill="rgba(37,99,235,0.05)" />
+              <circle cx="220" cy="220" r="16" stroke="#2563EB" stroke-width="1.2" fill="rgba(37,99,235,0.05)" />
+              <circle cx="160" cy="300" r="12" stroke="#2563EB" stroke-width="1" fill="rgba(37,99,235,0.05)" />
+              <line x1="120" y1="228" x2="206" y2="226" stroke="#2563EB" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4" />
+              <line x1="118" y1="252" x2="155" y2="290" stroke="#2563EB" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4" />
+              <line x1="220" y1="236" x2="165" y2="292" stroke="#2563EB" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4" />
+              <circle cx="100" cy="240" r="4" fill="#2563EB" opacity="0.7" />
+              <circle cx="220" cy="220" r="3" fill="#2563EB" opacity="0.5" />
+              <circle cx="160" cy="300" r="2.5" fill="#2563EB" opacity="0.6" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="py-24 md:py-32" style="background:#F0EFED">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+        <div class="md:col-span-5 rl">
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-balance">
+            Siapa di balik layar.
+          </h2>
+          <div class="divider-rule mt-6"></div>
+          <p class="text-[#737373] text-sm mt-6 leading-relaxed font-mono">
+            Jakarta Global University &middot; S1 Teknik Informatika &middot; Angkatan 2023
+          </p>
+        </div>
+        <div class="md:col-span-7">
+          <div class="grid grid-cols-3 gap-3 mb-8 r">
+            <div class="stat-card" data-tilt>
+              <span class="stat-number"><span class="counter-value" data-target="2">0</span>+</span>
+              <span class="stat-label">Tahun Eksplorasi Web</span>
+            </div>
+            <div class="stat-card" data-tilt>
+              <span class="stat-number"><span class="counter-value" data-target="3">0</span>+</span>
+              <span class="stat-label">Project Publik</span>
+            </div>
+            <div class="stat-card" data-tilt>
+              <span class="stat-number">S1</span>
+              <span class="stat-label">Teknik Informatika</span>
+            </div>
+          </div>
+
+          <blockquote class="pull-quote r d1">
+            &ldquo;Buat saya, coding bukan cuma nulis function, tapi soal bikin sesuatu yang benar-benar dipakai orang.&rdquo;
+          </blockquote>
+          <p class="text-[#1A1A1A] mt-6 leading-relaxed r d2">
+            Halo, saya Rifat — mahasiswa Teknik Informatika di <strong>Jakarta Global University</strong> yang tertarik
+            sama pengembangan web. Dari ngoprek Laravel sampai mainin React, saya nikmatin proses
+            belajar dan ngulik hal baru.
+          </p>
+          <p class="text-[#737373] mt-4 leading-relaxed r d3">
+            Di luar web, saya juga tertarik sama jaringan komputer — routing, switching,
+            dan administrasi network. Lumayan sering utak-atik MikroTik dan Cisco
+            buat kebutuhan lab dan project lapangan.
+          </p>
+          <p class="text-[#737373] mt-4 leading-relaxed r d4">
+            Saat ini aktif ngerjain project freelance dan explore ekosistem
+            JavaScript — terutama Next.js sama TypeScript. Kadang iseng bikin UI pakai Figma.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-10 md:gap-16 mt-20 md:mt-28">
+        <div class="md:col-span-5 rl">
+          <h3 class="font-display text-2xl md:text-3xl font-bold tracking-tight">
+            Pendidikan.
+          </h3>
+          <div class="divider-rule mt-4"></div>
+        </div>
+        <div class="md:col-span-7">
+          <div class="edu-timeline">
+            <div class="edu-item r">
+              <div class="edu-dot"></div>
+              <div class="edu-card">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h4 class="font-display text-lg font-bold">Teknik Informatika</h4>
+                    <p class="text-[#2563EB] text-sm font-medium mt-0.5">2023 &ndash; Sekarang</p>
+                    <p class="text-[#737373] leading-relaxed mt-1">Jakarta Global University &mdash; S1 Sarjana Komputer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="edu-item r d1">
+              <div class="edu-dot"></div>
+              <div class="edu-card">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h4 class="font-display text-lg font-bold">SMK Teknik Komputer dan Jaringan</h4>
+                    <p class="text-[#2563EB] text-sm font-medium mt-0.5">2020 &ndash; 2023</p>
+                    <p class="text-[#737373] leading-relaxed mt-1">Jurusan TKJ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 r d1">
+        <div class="flex flex-wrap gap-2">
+          <span class="badge" translate="no">HTML &amp; CSS</span>
+          <span class="badge" translate="no">JavaScript</span>
+          <span class="badge" translate="no">TypeScript</span>
+          <span class="badge" translate="no">React</span>
+          <span class="badge" translate="no">Next.js</span>
+          <span class="badge" translate="no">Laravel</span>
+          <span class="badge" translate="no">Tailwind</span>
+          <span class="badge" translate="no">MySQL</span>
+          <span class="badge" translate="no">Figma</span>
+          <span class="badge" translate="no">Git</span>
+          <span class="badge" translate="no">Cisco</span>
+          <span class="badge" translate="no">MikroTik</span>
+          <span class="badge" translate="no">Linux</span>
+          <span class="badge" translate="no">Python</span>
+          <span class="badge" translate="no">Java</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYEK -->
+  <section id="proyek" class="py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-16 md:mb-20 rl">
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
+          Beberapa yang pernah<br/>saya kerjakan.
+        </h2>
+        <div class="divider-rule mt-6"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 auto-rows-[minmax(280px,auto)]">
+        <div class="md:col-span-2 project-card r" data-tilt>
+          <div class="grid md:grid-cols-5">
+            <div class="md:col-span-2">
+              <div class="project-thumb" style="background:linear-gradient(135deg, #3776AB 0%, #3776AB20 100%)">
+                <i aria-hidden="true" class="ph ph-robot"></i>
+                <div class="tech-stack">
+                  <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" />
+                  <img src="https://cdn.simpleicons.org/gnubash/4EAA25" alt="Shell" />
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+              <h3 class="font-display text-xl md:text-2xl font-bold">
+                <a href="https://github.com/Rifatdhy/Jarvis" target="_blank" rel="noopener noreferrer" class="hover:text-[#2563EB] transition-colors duration-300">
+                  Jarvis
+                  <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] align-super text-[0.6em]"></i>
+                </a>
+              </h3>
+              <p class="text-[#737373] mt-2 leading-relaxed text-sm">
+                Chatbot AI berbasis AIML dengan Text-to-Speech. GUI tkinter untuk percakapan natural, random responses, dan pengenalan konteks user via tag Set/Get/SRAI.
+              </p>
+              <a href="https://github.com/Rifatdhy/Jarvis" target="_blank" rel="noopener noreferrer" class="project-link mt-4">
+                <i aria-hidden="true" class="ph ph-github-logo text-sm"></i>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card r d1" data-tilt>
+          <div class="project-thumb" style="background:linear-gradient(135deg, #ED8B00 0%, #5382A120 100%);min-height:160px">
+            <i aria-hidden="true" class="ph ph-chats"></i>
+            <div class="tech-stack">
+              <img src="https://cdn.simpleicons.org/java/ED8B00" alt="Java" />
+              <img src="https://cdn.simpleicons.org/socketdotio/010101" alt="Socket" />
+            </div>
+          </div>
+          <div class="p-6 md:p-8">
+            <h3 class="font-display text-xl md:text-2xl font-bold">
+              <a href="https://github.com/Rifatdhy/Mini-Whatsapp-" target="_blank" rel="noopener noreferrer" class="hover:text-[#2563EB] transition-colors duration-300">
+                Mini-Whatsapp
+                <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] align-super text-[0.6em]"></i>
+              </a>
+            </h3>
+            <p class="text-[#737373] mt-2 leading-relaxed text-sm">
+              Aplikasi chat multi-client dengan Java Socket Programming. Arsitektur client-server, GUI Swing, broadcast real-time, multithreading.
+            </p>
+            <a href="https://github.com/Rifatdhy/Mini-Whatsapp-" target="_blank" rel="noopener noreferrer" class="project-link mt-4">
+              <i aria-hidden="true" class="ph ph-github-logo text-sm"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 project-card r d2" data-tilt>
+          <div class="grid md:grid-cols-5">
+            <div class="md:col-span-2 md:order-2">
+              <div class="project-thumb" style="background:linear-gradient(135deg, #7C3AED 0%, #A855F720 100%)">
+                <i aria-hidden="true" class="ph ph-magic-wand"></i>
+                <div class="tech-stack">
+                  <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" />
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-3 p-6 md:p-8 flex flex-col justify-center md:order-1">
+              <h3 class="font-display text-xl md:text-2xl font-bold">
+                <a href="https://github.com/Rifatdhy/Chat-bot-UTS" target="_blank" rel="noopener noreferrer" class="hover:text-[#2563EB] transition-colors duration-300">
+                  Chat-bot-UTS
+                  <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] align-super text-[0.6em]"></i>
+                </a>
+              </h3>
+              <p class="text-[#737373] mt-2 leading-relaxed text-sm">
+                Sistem chatbot berbasis Python untuk tugas Artificial Intelligence. Mengimplementasikan pola percakapan berbasis aturan dengan respons otomatis.
+              </p>
+              <a href="https://github.com/Rifatdhy/Chat-bot-UTS" target="_blank" rel="noopener noreferrer" class="project-link mt-4">
+                <i aria-hidden="true" class="ph ph-github-logo text-sm"></i>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEAHLIAN -->
+  <section id="keahlian" class="py-24 md:py-32" style="background:#F0EFED">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-16 md:mb-20 rl">
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
+          Teknologi &amp; perangkat<br/>yang saya pakai sehari-hari.
+        </h2>
+        <div class="divider-rule mt-6"></div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-4 md:gap-5">
+        <div class="md:col-span-7 r">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-[0.625rem] font-mono text-[#2563EB] font-semibold uppercase tracking-[0.15em]">Frontend</span>
+            <div class="flex-1 h-px" style="background:#D4D2CE"></div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="skill-cell s1 r"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" /><span translate="no">HTML5</span></div>
+            <div class="skill-cell s2 r"><svg viewBox="0 0 24 24" width="28" height="28" fill="#1572B6" xmlns="http://www.w3.org/2000/svg" aria-label="CSS3"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg><span translate="no">CSS3</span></div>
+            <div class="skill-cell s3 r"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" /><span translate="no">JavaScript</span></div>
+            <div class="skill-cell s4 r"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" /><span translate="no">TypeScript</span></div>
+            <div class="skill-cell s5 r" style="background:linear-gradient(135deg,#fff,#EBF5FF)"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" /><span translate="no">React</span></div>
+            <div class="skill-cell s1 r" style="background:linear-gradient(135deg,#fff,#F5F5F5)"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" /><span translate="no">Next.js</span></div>
+            <div class="skill-cell s2 r" style="background:linear-gradient(135deg,#fff,#E8F8F5)"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" /><span translate="no">Tailwind</span></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 r d1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-[0.625rem] font-mono text-[#2563EB] font-semibold uppercase tracking-[0.15em]">Backend &amp; Database</span>
+            <div class="flex-1 h-px" style="background:#D4D2CE"></div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="skill-cell s1 r" style="background:linear-gradient(135deg,#fff,#FFF0ED)"><img src="https://cdn.simpleicons.org/laravel/FF2D20" alt="Laravel" /><span translate="no">Laravel</span></div>
+            <div class="skill-cell s2 r" style="background:linear-gradient(135deg,#fff,#F0F7FF)"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" /><span translate="no">MySQL</span></div>
+            <div class="skill-cell s3 r" style="background:linear-gradient(135deg,#fff,#F0FFF4)"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" /><span translate="no">Node.js</span></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 r d2">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-[0.625rem] font-mono text-[#2563EB] font-semibold uppercase tracking-[0.15em]">Tools &amp; Design</span>
+            <div class="flex-1 h-px" style="background:#D4D2CE"></div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="skill-cell s1 r" style="background:linear-gradient(135deg,#fff,#FFF5F0)"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" /><span translate="no">Figma</span></div>
+            <div class="skill-cell s2 r" style="background:linear-gradient(135deg,#fff,#FFF5F5)"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git" /><span translate="no">Git</span></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 r d1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-[0.625rem] font-mono text-[#2563EB] font-semibold uppercase tracking-[0.15em]">Network &amp; Infrastructure</span>
+            <div class="flex-1 h-px" style="background:#D4D2CE"></div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div class="skill-cell s1 r" style="background:linear-gradient(135deg,#fff,#F0F8FF)"><img src="https://cdn.simpleicons.org/cisco/1BA0D7" alt="Cisco" /><span translate="no">Cisco</span></div>
+            <div class="skill-cell s2 r" style="background:linear-gradient(135deg,#fff,#F5F5F5)"><img src="https://cdn.simpleicons.org/linux/000000" alt="Linux" /><span translate="no">Linux</span></div>
+            <div class="skill-cell s1 r" style="background:linear-gradient(135deg,#fff,#FFF5EB)"><img src="https://cdn.simpleicons.org/mikrotik/FF6600" alt="MikroTik" /><span translate="no">MikroTik</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mx-auto text-center r">
+        <span class="badge mb-6 justify-center">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>
+          Tersedia untuk diskusi
+        </span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-tight">
+          Ada project atau<br/>ide? <span style="color:#2563EB">Ngobrol aja.</span>
+        </h2>
+        <div class="divider-rule mx-auto mt-6"></div>
+        <p class="text-[#737373] mt-6 leading-relaxed max-w-md mx-auto">
+          Selalu terbuka buat diskusi, kolaborasi, atau sekadar ngobrol
+          seputar teknologi dan pengembangan web.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-12 r d1">
+        <div class="grid sm:grid-cols-2 gap-3">
+          <a href="https://wa.me/6285781354857" target="_blank" rel="noopener noreferrer" class="contact-card group">
+            <div class="icon-box" style="background:rgba(37,211,102,0.1)">
+              <i aria-hidden="true" class="ph ph-whatsapp-logo" style="color:#25D366;font-size:1.25rem"></i>
+            </div>
+            <div class="text-left min-w-0">
+              <span class="block text-sm font-display font-semibold truncate">WhatsApp</span>
+              <span class="block text-xs text-[#737373]">+62 857-8135-4857</span>
+            </div>
+            <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] ml-auto shrink-0 group-hover:text-[#2563EB] transition-colors"></i>
+          </a>
+          <a href="mailto:rifatdhiyaullail@gmail.com" class="contact-card group">
+            <div class="icon-box" style="background:rgba(234,67,53,0.1)">
+              <i aria-hidden="true" class="ph ph-envelope" style="color:#EA4335;font-size:1.25rem"></i>
+            </div>
+            <div class="text-left min-w-0">
+              <span class="block text-sm font-display font-semibold truncate">Email</span>
+              <span class="block text-xs text-[#737373] truncate">rifatdhiyaullail@gmail.com</span>
+            </div>
+            <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] ml-auto shrink-0 group-hover:text-[#2563EB] transition-colors"></i>
+          </a>
+          <a href="CV%20Rifat.pdf" download class="contact-card group">
+            <div class="icon-box" style="background:rgba(37,99,235,0.1)">
+              <i aria-hidden="true" class="ph ph-download-simple" style="color:#2563EB;font-size:1.25rem"></i>
+            </div>
+            <div class="text-left min-w-0">
+              <span class="block text-sm font-display font-semibold truncate">Download CV</span>
+              <span class="block text-xs text-[#737373] truncate">PDF — Rifat Dhiya Ul Lail</span>
+            </div>
+            <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] ml-auto shrink-0 group-hover:text-[#2563EB] transition-colors"></i>
+          </a>
+          <a href="https://github.com/Rifatdhy" target="_blank" rel="noopener noreferrer" class="contact-card group">
+            <div class="icon-box" style="background:rgba(0,0,0,0.06)">
+              <i aria-hidden="true" class="ph ph-github-logo" style="font-size:1.25rem"></i>
+            </div>
+            <div class="text-left min-w-0">
+              <span class="block text-sm font-display font-semibold truncate">GitHub</span>
+              <span class="block text-xs text-[#737373] truncate">@Rifatdhy</span>
+            </div>
+            <i aria-hidden="true" class="ph ph-arrow-up-right text-sm text-[#737373] ml-auto shrink-0 group-hover:text-[#2563EB] transition-colors"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="max-w-xl mx-auto mt-16 r d2">
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">Nama</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="John Doe" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="john@example.com" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Pesan</label>
+            <textarea id="message" name="message" required placeholder="Ceritakan project atau idemu di sini&#8230;" class="form-input"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-full justify-center mt-2">
+            Kirim Pesan
+            <i aria-hidden="true" class="ph ph-paper-plane-right text-lg"></i>
+          </button>
+          <p id="form-status" class="text-sm text-center mt-3 text-[#737373] hidden" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="flex justify-center gap-4 mt-12 r d3">
+        <a href="https://wa.me/6285781354857" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i aria-hidden="true" class="ph ph-whatsapp-logo text-xl"></i></a>
+        <a href="https://github.com/Rifatdhy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i aria-hidden="true" class="ph ph-github-logo text-xl"></i></a>
+        <a href="https://linkedin.com/in/rifatdhiyaullail" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i aria-hidden="true" class="ph ph-linkedin-logo text-xl"></i></a>
+        <a href="https://instagram.com/rifatdhy" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i aria-hidden="true" class="ph ph-instagram-logo text-xl"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12" style="background:#F0EFED">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#D4D2CE] pt-8">
+        <p class="text-sm text-[#737373]">&copy; <span id="year">2026</span> Rifat Dhiya Ul Lail</p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/Rifatdhy" target="_blank" rel="noopener noreferrer" class="text-[#737373] hover:text-[#1A1A1A] transition-colors text-sm">GitHub</a>
+          <a href="https://linkedin.com/in/rifatdhiyaullail" target="_blank" rel="noopener noreferrer" class="text-[#737373] hover:text-[#1A1A1A] transition-colors text-sm">LinkedIn</a>
+          <button id="back-to-top" aria-label="Kembali ke atas">
+            <span class="hidden sm:inline">Ke atas</span>
+            <i aria-hidden="true" class="ph ph-arrow-up"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
