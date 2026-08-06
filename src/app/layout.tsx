@@ -63,12 +63,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1" />
-        <meta name="theme-color" content="#FBFBFA" media="(prefers-color-scheme:light)" />
-        <meta name="theme-color" content="#111111" media="(prefers-color-scheme:dark)" />
-        <script dangerouslySetInnerHTML={{
-          __html: `(function(){var t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){var t=e.matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t})})()`
-        }} />
+        <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+        <meta name="theme-color" content="#FBFBFA" />
       </head>
       <body className="antialiased">
         <a

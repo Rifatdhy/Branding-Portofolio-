@@ -35,17 +35,8 @@ export function Projects() {
                 key={f}
                 onClick={() => setActive(f)}
                 className={`badge transition-all duration-200 ${
-                  active === f ? "pastel-yellow" : "badge"
+                  active === f ? "pastel-yellow" : "border-default bg-surface-alt text-secondary"
                 }`}
-                style={
-                  active !== f
-                    ? {
-                        background: "var(--color-surface-alt)",
-                        color: "var(--color-text-secondary)",
-                        border: "1px solid var(--color-border)",
-                      }
-                    : undefined
-                }
               >
                 {f}
               </button>
@@ -53,100 +44,58 @@ export function Projects() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 auto-rows-[minmax(280px,auto)]">
-          {filtered.map((project, i) => {
-            const isWide = i === 0;
-            const isFull =
-              filtered.length === 1 ||
-              (i === filtered.length - 1 && filtered.length > 1);
-            const colSpan =
-              filtered.length === 1
-                ? "md:col-span-3"
-                : isWide
-                  ? "md:col-span-2"
-                  : "";
-            const cls = `${colSpan} ${
-              isFull && filtered.length > 2 ? "md:col-span-3" : ""
-            }`;
-            return (
-              <div
-                key={project.title}
-                className={`${cls} scroll-reveal`}
-                style={{ transitionDelay: `${i * 0.08}s` }}
-              >
-                <div className="project-card">
-                  <div className="grid md:grid-cols-5">
-                    <div className={isWide ? "md:col-span-2" : "md:col-span-5"}>
-                      <div
-                        className="project-thumb"
-                        style={{
-                          background: project.gradient,
-                          minHeight: isWide ? "100%" : "160px",
-                        }}
-                      >
-                        <i
-                          aria-hidden="true"
-                          className={`ph-bold ${project.icon} text-4xl md:text-5xl`}
-                          style={{
-                            color: "var(--color-text-muted)",
-                            opacity: 0.3,
-                          }}
-                        />
-                        <div className="tech-stack">
-                          {project.techs.map((tech) => (
-                            <Image
-                              key={tech}
-                              src={`https://cdn.simpleicons.org/${tech.toLowerCase()}`}
-                              alt={tech}
-                              width={22}
-                              height={22}
-                              unoptimized
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                      <div
-                        className={`${
-                          isWide ? "md:col-span-3" : "md:col-span-5"
-                        } p-6 md:p-8 flex flex-col justify-start`}
-                      >
-                        <h3 className="font-display text-xl md:text-2xl font-bold tracking-tight">
-                          <a
-                            href={project.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:opacity-60 transition-opacity duration-200"
-                          >
-                            {project.title}
-                            <i
-                              aria-hidden="true"
-                              className="ph-bold ph-arrow-up-right text-sm align-super text-[0.6em] ml-1"
-                              style={{ color: "var(--color-text-muted)" }}
-                            />
-                          </a>
-                        </h3>
-                        <p
-                          className="mt-2 leading-relaxed text-sm"
-                          style={{ color: "var(--color-text-secondary)" }}
-                        >
-                          {project.description}
-                        </p>
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="project-link mt-auto pt-4"
-                        >
-                          <i aria-hidden="true" className="ph-bold ph-github-logo text-sm" />
-                          Source Code
-                        </a>
-                      </div>
-                  </div>
-                </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {filtered.map((project, i) => (
+            <div
+              key={project.title}
+              className="scroll-reveal project-card p-6 md:p-8 flex flex-col"
+              style={{ transitionDelay: `${i * 0.08}s` }}
+            >
+              <div className="flex-grow">
+                <h3 className="font-display text-xl md:text-2xl font-bold tracking-tight">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-60 transition-opacity duration-200"
+                  >
+                    {project.title}
+                    <i
+                      aria-hidden="true"
+                      className="ph-bold ph-arrow-up-right text-sm align-super text-[0.6em] ml-1 text-muted"
+                    />
+                  </a>
+                </h3>
+                <p className="mt-3 leading-relaxed text-sm text-secondary">
+                  {project.description}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="mt-6 flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  {project.techs.map((tech) => (
+                    <Image
+                      key={tech}
+                      src={`https://cdn.simpleicons.org/${tech.toLowerCase()}`}
+                      alt={tech}
+                      width={22}
+                      height={22}
+                      className="opacity-70"
+                    />
+                  ))}
+                </div>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link ml-auto"
+                >
+                  <i aria-hidden="true" className="ph-bold ph-github-logo text-sm" />
+                  Source Code
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

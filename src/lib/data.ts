@@ -9,30 +9,51 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Jarvis",
-    description:
-      "Chatbot AI berbasis AIML dengan Text-to-Speech. GUI tkinter untuk percakapan natural, random responses, dan pengenalan konteks user via tag Set/Get/SRAI.",
-    href: "https://github.com/Rifatdhy/Jarvis",
-    techs: ["Python", "Shell"],
-    icon: "ph-robot",
+    title: "Eco-Rangers",
+    description: "Aplikasi mobile untuk mencatat dan melaporkan isu lingkungan.",
+    href: "https://github.com/Rifatdhy/ECO-RANGERS",
+    techs: ["Dart", "Flutter"],
+    icon: "ph-leaf",
     gradient: "135deg, #D4D2CE 0%, #E5E3E0 100%",
   },
   {
-    title: "Mini-Whatsapp",
-    description:
-      "Aplikasi chat multi-client dengan Java Socket Programming. Arsitektur client-server, GUI Swing, broadcast real-time, multithreading.",
-    href: "https://github.com/Rifatdhy/Mini-Whatsapp-",
-    techs: ["Java", "Socket"],
-    icon: "ph-chats",
+    title: "Clash Soccer",
+    description: "Game sepak bola multiplayer real-time berbasis web.",
+    href: "https://github.com/Rifatdhy/Clash-Soccer",
+    techs: ["TypeScript", "nodedotjs"],
+    icon: "ph-soccer-ball",
     gradient: "135deg, #B8B5B0 0%, #E5E3E0 100%",
   },
   {
-    title: "Chat-bot-UTS",
-    description:
-      "Sistem chatbot berbasis Python untuk tugas Artificial Intelligence. Mengimplementasikan pola percakapan berbasis aturan dengan respons otomatis.",
-    href: "https://github.com/Rifatdhy/Chat-bot-UTS",
-    techs: ["Python"],
-    icon: "ph-magic-wand",
+    title: "Node Vault",
+    description: "Pengelola kata sandi aman dengan enkripsi end-to-end.",
+    href: "https://github.com/Rifatdhy/NodeVault",
+    techs: ["openjdk", "spring"],
+    icon: "ph-key",
+    gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
+  },
+    {
+    title: "FinnBuddy",
+    description: "Aplikasi web untuk melacak keuangan pribadi dan membuat anggaran.",
+    href: "https://github.com/Rifatdhy/FINN-BUDDY",
+    techs: ["html5", "css", "javascript"],
+    icon: "ph-wallet",
+    gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
+  },
+    {
+    title: "TODO List",
+    description: "Aplikasi sederhana untuk mencatat daftar tugas harian.",
+    href: "https://github.com/Rifatdhy/TODO-List",
+    techs: ["TypeScript", "React"],
+    icon: "ph-check-square",
+    gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
+  },
+    {
+    title: "Project Pengeluaran",
+    description: "Aplikasi untuk mencatat dan mengelola pengeluaran pribadi.",
+    href: "https://github.com/Rifatdhy/Project-Pengeluaran",
+    techs: ["TypeScript", "nextdotjs"],
+    icon: "ph-chart-bar",
     gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
   },
 ];
@@ -108,7 +129,7 @@ export const education: Education[] = [
   {
     title: "Teknik Informatika",
     subtitle: "S1 Sarjana Komputer",
-    period: "2023 - Sekarang",
+    period: "2024 - Sekarang",
     description: "Jakarta Global University",
   },
   {

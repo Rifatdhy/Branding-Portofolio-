@@ -29,7 +29,7 @@ export function Hero() {
       >
         <div className="max-w-4xl">
           <div className="hero-item mb-8">
-            <span className="badge pastel-green">
+            <span className="badge pastel-red">
               <span className="w-1.5 h-1.5 rounded-full inline-block bg-current opacity-60" />
               Tersedia untuk project
             </span>
@@ -37,8 +37,7 @@ export function Hero() {
 
           <h1 className="hero-item font-display text-[clamp(2.75rem,7vw,5rem)] font-bold tracking-[-0.03em] leading-[1.05] text-balance">
             <span
-              className="block text-[0.3em] font-medium tracking-[0.25em] uppercase mb-4 font-body"
-              style={{ color: "var(--color-text-secondary)" }}
+              className="block text-[0.3em] font-medium tracking-[0.25em] uppercase mb-4 font-body text-secondary"
             >
               Rifat
             </span>
@@ -46,8 +45,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="hero-item text-lg md:text-xl max-w-xl leading-relaxed mt-6"
-            style={{ color: "var(--color-text-secondary)" }}
+            className="hero-item text-lg md:text-xl max-w-xl leading-relaxed mt-6 text-secondary"
           >
             Web &amp; Network Engineer. Nulis kode, ngulik jaringan, eksplorasi
             teknologi baru.

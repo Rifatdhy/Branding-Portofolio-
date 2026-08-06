@@ -37,6 +37,23 @@ export default function CVPage() {
             </div>
           </header>
 
+<div className="mt-8 grid sm:grid-cols-2 gap-3">
+    {[
+        { href: SOCIAL.whatsapp, label: "WhatsApp", value: SITE.phone, icon: "ph-whatsapp-logo" },
+        { href: `mailto:${SITE.email}`, label: "Email", value: SITE.email, icon: "ph-at" },
+        { href: "/Rifat-Dhiya-Ul-Lail-CV.pdf", label: "Download CV", value: "PDF — Rifat Dhiya Ul Lail", icon: "ph-file-pdf" },
+        { href: SOCIAL.github, label: "GitHub", value: "@Rifatdhy", icon: "ph-github-logo" }
+    ].map(item => (
+        <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="cv-card">
+            <div className="flex items-center gap-3">
+                <i aria-hidden="true" className={`ph-bold ${item.icon} text-lg`} style={{ color: "var(--color-text-secondary)" }} />
+                <span className="font-display font-semibold">{item.label}</span>
+            </div>
+            <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{item.value}</span>
+        </a>
+    ))}
+</div>
+
           <section className="mb-8">
             <h3 className="font-display text-lg font-bold mb-3">Tentang Saya</h3>
             <p className="leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
