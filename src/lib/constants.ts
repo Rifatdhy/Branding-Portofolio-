@@ -7,10 +7,12 @@ export const SITE = {
     "Portofolio Rifat Dhiya Ul Lail — Mahasiswa Teknik Informatika Jakarta Global University, Web & Network Engineer.",
   url: "https://rifatdhy.github.io",
   email: "rifatdhiyaullail@gmail.com",
+  emailCompose:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=rifatdhiyaullail@gmail.com&su=Kolaborasi%20dari%20Portofolio",
   phone: "+6285781354857",
   location: "Jakarta Global University",
   major: "S1 Teknik Informatika",
-  batch: "2023",
+  batch: "2024",
 };
 
 export const SOCIAL = {

@@ -16,7 +16,6 @@ export default function PrivacyPage() {
         <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
           Kebijakan Privasi
         </h1>
-        <div className="section-divider mb-8" />
 
         <div className="prose-custom">
           <h2>Data yang dikumpulkan</h2>
@@ -28,9 +27,9 @@ export default function PrivacyPage() {
 
           <h2>Penyimpanan data</h2>
           <p>
-            Pesan yang dikirim melalui formulir kontak dikirimkan ke alamat email
-            pribadi melalui layanan Resend. Data tidak disimpan di database situs
-            ini.
+            Situs ini tidak mengumpulkan data pribadi secara aktif selain dari
+            analitik anonim yang disediakan oleh Vercel Analytics untuk memantau
+            lalu lintas pengunjung.
           </p>
 
           <h2>Cookie</h2>

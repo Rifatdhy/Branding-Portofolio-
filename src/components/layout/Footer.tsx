@@ -1,54 +1,28 @@
-import Link from "next/link";
+"use client";
+
 import { SOCIAL } from "@/lib/constants";
+import { GithubLogo, LinkedinLogo, InstagramLogo } from "@phosphor-icons/react";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-12" style={{ background: "var(--color-surface-alt)" }}>
+    <footer className="text-[var(--color-text-muted)] py-8 mt-auto">
       <div className="max-w-6xl mx-auto px-6">
-        <div
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8"
-          style={{ borderTop: "1px solid var(--color-border)" }}
-        >
-          <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-[var(--color-border)]">
+          <p className="text-sm">
             &copy; {year} Rifat Dhiya Ul Lail
           </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href={SOCIAL.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              GitHub
-            </Link>
-            <Link
-              href={SOCIAL.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              LinkedIn
-            </Link>
-            <span className="hidden sm:inline text-xs" style={{ color: "var(--color-text-muted)" }} aria-hidden="true">/</span>
-            <Link
-              href="/privacy"
-              className="text-xs"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              Privasi
-            </Link>
-            <button
-              id="back-to-top"
-              aria-label="Kembali ke atas"
-              className="scroll-to-top"
-            >
-              <span className="hidden sm:inline">Ke atas</span>
-              <i aria-hidden="true" className="ph-bold ph-arrow-up"></i>
-            </button>
+          <div className="flex items-center gap-x-4">
+            <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-primary)] transition-colors" aria-label="Github">
+              <GithubLogo size={22} />
+            </a>
+            <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-primary)] transition-colors" aria-label="LinkedIn">
+              <LinkedinLogo size={22} />
+            </a>
+            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text-primary)] transition-colors" aria-label="Instagram">
+              <InstagramLogo size={22} />
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
-# Selamat Datang di Blog Saya
-
+---
+title: Selamat Datang di Blog Saya
 date: 2026-06-28
+---
 
 Halo! Ini adalah postingan pertama di blog saya.
 

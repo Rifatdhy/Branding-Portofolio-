@@ -1,60 +1,35 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 import { SOCIAL } from "@/lib/constants";
+import { about } from "@/lib/data";
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!ref.current) return;
-    const els = ref.current.querySelectorAll<HTMLElement>(".hero-item");
-    els.forEach((el, i) => {
-      el.style.animationDelay = `${i * 0.12}s`;
-      el.classList.add("hero-animate");
-    });
-  }, []);
-
   return (
     <section
       id="hero"
-      className="min-h-[100dvh] flex items-center relative overflow-hidden bg-radial-soft"
+      className="text-[var(--color-text-primary)] min-h-screen pt-28 flex flex-col justify-center overflow-hidden"
     >
-      <div className="ambient-blob" style={{ top: "-10%", left: "-5%" }} />
-
-      <div
-        className="max-w-6xl mx-auto px-6 w-full pt-24 md:pt-28 pb-16 relative z-10"
-        ref={ref}
-      >
+      <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="max-w-4xl">
-          <div className="hero-item mb-8">
-            <span className="badge pastel-red">
-              <span className="w-1.5 h-1.5 rounded-full inline-block bg-current opacity-60" />
-              Tersedia untuk project
-            </span>
-          </div>
-
-          <h1 className="hero-item font-display text-[clamp(2.75rem,7vw,5rem)] font-bold tracking-[-0.03em] leading-[1.05] text-balance">
-            <span
-              className="block text-[0.3em] font-medium tracking-[0.25em] uppercase mb-4 font-body text-secondary"
-            >
-              Rifat
-            </span>
-            DHIYA UL LAIL
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02]">
+            Rifat
+            <br />
+            Dhiya Ul Lail
           </h1>
 
-          <p
-            className="hero-item text-lg md:text-xl max-w-xl leading-relaxed mt-6 text-secondary"
-          >
-            Web &amp; Network Engineer. Nulis kode, ngulik jaringan, eksplorasi
-            teknologi baru.
+          <p className="text-lg sm:text-xl max-w-xl mt-8 text-[var(--color-text-secondary)]">
+            {about}
           </p>
 
-          <div className="hero-item flex flex-wrap gap-3 mt-10">
-            <Link href="/#proyek" className="btn btn-primary">
+          <div className="flex flex-wrap gap-3 mt-12">
+            <Link
+              href="/#proyek"
+              className="btn btn-primary"
+            >
               Lihat Proyek
-              <i aria-hidden="true" className="ph-bold ph-arrow-right text-lg" />
+              <ArrowRight aria-hidden="true" weight="bold" className="ml-1" />
             </Link>
             <Link
               href={SOCIAL.whatsapp}
@@ -63,11 +38,11 @@ export function Hero() {
               className="btn btn-outline"
             >
               Hubungi Saya
-              <i aria-hidden="true" className="ph-bold ph-arrow-up-right text-lg" />
+              <ArrowUpRight aria-hidden="true" weight="bold" className="ml-1" />
             </Link>
           </div>
         </div>
       </div>
-    </section>
+      </section>
   );
 }

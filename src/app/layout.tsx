@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Newsreader, DM_Sans, JetBrains_Mono } from "next/font/google";
-import { SITE } from "@/lib/constants";
+import { Outfit, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SITE, SOCIAL } from "@/lib/constants";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ProgressBar } from "@/components/layout/ProgressBar";
-import { ClientEffects } from "@/components/layout/ClientEffects";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import "./globals.css";
 
-const newsreader = Newsreader({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-display",
@@ -30,6 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: `${SITE.name} — ${SITE.title}`,
   description: SITE.description,
   openGraph: {
@@ -38,9 +39,34 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE.url,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} — ${SITE.title}`,
+    description: SITE.description,
+  },
   keywords:
     "Rifat Dhiya Ul Lail, portfolio, web developer, teknik informatika, Jakarta Global University, frontend, react, nextjs, network",
   authors: [{ name: SITE.name }],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.name,
+  url: SITE.url,
+  jobTitle: SITE.title,
+  almaMater: "Jakarta Global University",
+  knowsAbout: [
+    "Web Development",
+    "Network Engineering",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Laravel",
+    "MikroTik",
+    "Cisco",
+  ],
+  sameAs: [SOCIAL.github, SOCIAL.linkedin, SOCIAL.instagram],
 };
 
 export default function RootLayout({
@@ -51,25 +77,35 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${newsreader.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={`${outfit.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23787774'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23FBFBFA' font-family='DM Sans,sans-serif' font-weight='700' font-size='16'%3ERD%3C/text%3E%3C/svg%3E"
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#0b0b0d"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
-        <meta name="theme-color" content="#FBFBFA" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#fafafc"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var m=matchMedia("(prefers-color-scheme: light)");if(!t)t=m.matches?"light":"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className="antialiased">
+      <body className="antialiased flex flex-col min-h-screen">
         <a
           href="#main-content"
-          className="fixed -top-20 left-4 z-70 px-4 py-2 rounded bg-[var(--color-text-primary)] text-[var(--color-surface)] text-sm font-medium transition-all duration-300 focus:top-4"
+          className="fixed -top-20 left-4 z-[70] px-4 py-2 rounded bg-[var(--color-text-primary)] text-[var(--color-surface)] text-sm font-medium transition-all duration-300 focus:top-4"
         >
           Loncat ke konten utama
         </a>
@@ -78,7 +114,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <CookieConsent />
-        <ClientEffects />
+        <Analytics />
       </body>
     </html>
   );

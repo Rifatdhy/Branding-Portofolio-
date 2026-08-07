@@ -1,7 +1,8 @@
 "use client";
 
-import { education, allTechs } from "@/lib/data";
+import { education } from "@/lib/data";
 import { SITE } from "@/lib/constants";
+import { Reveal } from "../magic/Reveal";
 
 export function About() {
   const items = [
@@ -15,100 +16,91 @@ export function About() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-10 md:gap-16">
           <div className="md:col-span-5">
-            <div className="scroll-reveal">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-balance">
-                Siapa di balik layar.
-              </h2>
-              <div className="section-divider" />
-              <p
-                className="text-sm mt-6 leading-relaxed font-mono"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                {SITE.location} &middot; {SITE.major} &middot; Angkatan{" "}
-                {SITE.batch}
-              </p>
-            </div>
+            <Reveal>
+              <div className="flex flex-col gap-2">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+                  Profile
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-balance">
+                  Siapa di balik layar.
+                </h2>
+                <p
+                  className="text-sm mt-6 leading-relaxed font-mono"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {SITE.location} &middot; {SITE.major} &middot; Angkatan{" "}
+                  {SITE.batch}
+                </p>
+              </div>
+            </Reveal>
           </div>
           <div className="md:col-span-7">
-            <div className="scroll-reveal">
-              <div className="grid grid-cols-3 gap-3 mb-10">
+            <Reveal>
+              <div className="grid grid-cols-3 divide-x divide-[var(--color-border)] border-y border-[var(--color-border)] py-8 mb-12">
                 {items.map((stat) => (
-                  <div key={stat.label} className="stat-card">
-                    <span
-                      className="stat-number"
-                      style={{ color: "var(--color-text-primary)" }}
-                    >
+                  <div key={stat.label} className="px-4 first:pl-0">
+                    <span className="block font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text-primary)]">
                       {stat.num}
                     </span>
-                    <span className="stat-label">{stat.label}</span>
+                    <span className="block mt-1 text-xs text-secondary">
+                      {stat.label}
+                    </span>
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
-            <div className="scroll-reveal">
-              <blockquote
-                className="text-xl md:text-2xl leading-relaxed pl-6 md:pl-8 font-serif font-medium italic border-l-[3px] py-2"
-                style={{
-                  color: "var(--color-text-primary)",
-                  borderColor: "var(--color-border)",
-                }}
-              >
-                &ldquo;Buat saya, coding bukan cuma nulis function, tapi soal
-                bikin sesuatu yang benar-benar dipakai orang.&rdquo;
-              </blockquote>
-            </div>
-
-            <div className="scroll-reveal max-w-prose">
+            <Reveal className="max-w-prose">
               <p
                 className="mt-6 leading-relaxed"
                 style={{ color: "var(--color-text-primary)" }}
               >
                 Halo, saya Rifat &mdash; mahasiswa Teknik Informatika di{" "}
-                <strong>{SITE.location}</strong> yang tertarik sama pengembangan
-                web. Dari ngoprek Laravel sampai mainin React, saya nikmatin
-                proses belajar dan ngulik hal baru.
+                <strong>{SITE.location}</strong> yang berfokus pada pengembangan
+                web. Dari membangun aplikasi dengan Laravel hingga eksplorasi
+                React, saya menikmati setiap proses belajar dan mengulik hal
+                baru.
               </p>
-            </div>
+            </Reveal>
 
-            <div className="scroll-reveal max-w-prose">
+            <Reveal className="max-w-prose">
               <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                Di luar web, saya juga tertarik sama jaringan komputer &mdash;
-                routing, switching, dan administrasi network. Lumayan sering
-                utak-atik MikroTik dan Cisco buat kebutuhan lab dan project
-                lapangan.
+                Di luar pengembangan web, saya juga mendalami jaringan komputer
+                &mdash; routing, switching, dan administrasi network. Saya cukup
+                sering bekerja dengan MikroTik dan Cisco untuk kebutuhan lab
+                maupun project lapangan.
               </p>
-            </div>
+            </Reveal>
 
-            <div className="scroll-reveal max-w-prose">
+            <Reveal className="max-w-prose">
               <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                Saat ini aktif ngerjain project freelance dan explore ekosistem
-                JavaScript &mdash; terutama Next.js sama TypeScript. Kadang
-                iseng bikin UI pakai Figma.
+                Saat ini saya aktif mengerjakan project freelance serta mendalami
+                ekosistem JavaScript &mdash; terutama Next.js dan TypeScript.
+                Sesekali saya juga merancang UI dengan Figma.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 mt-24 md:mt-32">
           <div className="md:col-span-5">
-            <div className="scroll-reveal">
+            <Reveal>
               <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight">
                 Pendidikan.
               </h3>
               <div className="section-divider" />
-            </div>
+            </Reveal>
           </div>
           <div className="md:col-span-7">
             <div className="edu-timeline">
               {education.map((edu) => (
-                <div key={edu.title} className="scroll-reveal edu-item">
+                <Reveal key={edu.school} className="edu-item">
                   <div className="edu-dot" />
                   <div className="edu-card">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h4 className="font-display text-lg font-bold">
-                          {edu.title}
+                          {edu.school}
                         </h4>
                         <p
                           className="text-sm font-medium mt-0.5"
@@ -120,33 +112,18 @@ export function About() {
                           className="leading-relaxed mt-1"
                           style={{ color: "var(--color-text-secondary)" }}
                         >
-                          {edu.description} {edu.subtitle}
+                          {edu.degree}
                         </p>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-20">
-          <div className="scroll-reveal">
-            <div className="flex flex-wrap gap-2">
-              {allTechs.map((tech) => (
-                <span
-                  key={tech}
-                  className="badge pastel-blue"
-                  translate="no"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
     </section>
   );
 }

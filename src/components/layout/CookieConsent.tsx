@@ -20,7 +20,7 @@ export function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 inset-x-0 z-70 p-4"
+      className="fixed bottom-0 inset-x-0 z-[70] p-4"
       style={{ pointerEvents: "none" }}
     >
       <div

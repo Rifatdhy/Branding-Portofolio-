@@ -1,17 +1,17 @@
 import { SITE, SOCIAL } from "@/lib/constants";
-import { education } from "@/lib/data";
+import { about, education, experiences, projects, skillCategories } from "@/lib/data";
 
 export default function CVPage() {
   return (
     <div className="pt-28 md:pt-32 pb-24 md:pb-32">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="mb-12">
+        <div className="mb-12 flex flex-col gap-2">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            Resume
+          </span>
           <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
             Curriculum Vitae.
           </h1>
-          <div
-            className="section-divider"
-          />
         </div>
 
         <div
@@ -31,36 +31,34 @@ export default function CVPage() {
               </p>
             </div>
             <div className="text-sm text-right" style={{ color: "var(--color-text-secondary)" }}>
+              <p>Depok, Jawa Barat</p>
               <p>{SITE.email}</p>
               <p>{SITE.phone}</p>
-              <p>{SOCIAL.github.replace("https://", "")}</p>
+              <p>{SOCIAL.linkedin.replace("https://", "")}</p>
             </div>
           </header>
 
-<div className="mt-8 grid sm:grid-cols-2 gap-3">
-    {[
-        { href: SOCIAL.whatsapp, label: "WhatsApp", value: SITE.phone, icon: "ph-whatsapp-logo" },
-        { href: `mailto:${SITE.email}`, label: "Email", value: SITE.email, icon: "ph-at" },
-        { href: "/Rifat-Dhiya-Ul-Lail-CV.pdf", label: "Download CV", value: "PDF — Rifat Dhiya Ul Lail", icon: "ph-file-pdf" },
-        { href: SOCIAL.github, label: "GitHub", value: "@Rifatdhy", icon: "ph-github-logo" }
-    ].map(item => (
-        <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="cv-card">
-            <div className="flex items-center gap-3">
-                <i aria-hidden="true" className={`ph-bold ${item.icon} text-lg`} style={{ color: "var(--color-text-secondary)" }} />
-                <span className="font-display font-semibold">{item.label}</span>
-            </div>
-            <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{item.value}</span>
-        </a>
-    ))}
-</div>
+          <div className="mt-8 grid sm:grid-cols-2 gap-3">
+            {[
+              { href: SOCIAL.whatsapp, label: "WhatsApp", value: SITE.phone, icon: "ph-whatsapp-logo" },
+              { href: SITE.emailCompose, label: "Email", value: SITE.email, icon: "ph-at" },
+              { href: "/assets/CV Rifat.pdf", label: "Download CV", value: "PDF — Rifat Dhiya Ul Lail", icon: "ph-file-pdf" },
+              { href: SOCIAL.github, label: "GitHub", value: "@Rifatdhy", icon: "ph-github-logo" },
+            ].map((item) => (
+              <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="cv-card">
+                <div className="flex items-center gap-3">
+                  <i aria-hidden="true" className={`ph-bold ${item.icon} text-lg`} style={{ color: "var(--color-text-secondary)" }} />
+                  <span className="font-display font-semibold">{item.label}</span>
+                </div>
+                <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{item.value}</span>
+              </a>
+            ))}
+          </div>
 
           <section className="mb-8">
-            <h3 className="font-display text-lg font-bold mb-3">Tentang Saya</h3>
+            <h3 className="font-display text-lg font-bold mb-3">Ringkasan</h3>
             <p className="leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-              Mahasiswa Teknik Informatika di {SITE.location} yang tertarik pada
-              pengembangan web dan jaringan komputer. Berpengalaman dalam
-              membangun aplikasi web dengan React, Next.js, dan Laravel, serta
-              konfigurasi jaringan menggunakan MikroTik dan Cisco.
+              {about}
             </p>
           </section>
 
@@ -68,10 +66,29 @@ export default function CVPage() {
             <h3 className="font-display text-lg font-bold mb-3">Pendidikan</h3>
             <div className="space-y-4">
               {education.map((edu) => (
-                <div key={edu.title}>
-                  <h4 className="font-semibold">{edu.title}</h4>
+                <div key={edu.school}>
+                  <h4 className="font-semibold">{edu.school}</h4>
                   <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-                    {edu.description} — {edu.period}
+                    {edu.degree} — {edu.period}
+                  </p>
+                  {edu.info && (
+                    <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
+                      {edu.info}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-8">
+            <h3 className="font-display text-lg font-bold mb-3">Kemampuan</h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {skillCategories.map((cat) => (
+                <div key={cat.name}>
+                  <p className="font-semibold text-sm mb-1">{cat.name}:</p>
+                  <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+                    {cat.skills.map((s) => s.name).join(", ")}
                   </p>
                 </div>
               ))}
@@ -79,51 +96,45 @@ export default function CVPage() {
           </section>
 
           <section className="mb-8">
-            <h3 className="font-display text-lg font-bold mb-3">Keahlian</h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <p className="font-semibold text-sm mb-1">Frontend</p>
-                <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-                  HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-sm mb-1">Backend</p>
-                <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-                  Laravel, Node.js, MySQL
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-sm mb-1">Tools</p>
-                <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-                  Git, Figma, Linux
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-sm mb-1">Jaringan</p>
-                <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-                  Cisco, MikroTik, Routing & Switching
-                </p>
-              </div>
+            <h3 className="font-display text-lg font-bold mb-3">Pengalaman Kerja</h3>
+            <div className="space-y-5">
+              {experiences.map((exp) => (
+                <div key={exp.company}>
+                  <div className="flex items-start justify-between gap-4">
+                    <h4 className="font-semibold">{exp.position}</h4>
+                    <p className="text-sm whitespace-nowrap" style={{ color: "var(--color-text-muted)" }}>
+                      {exp.period === "-" ? "Magang" : exp.period}
+                    </p>
+                  </div>
+                  <p className="text-sm font-medium" style={{ color: "var(--color-text-secondary)" }}>
+                    {exp.company}
+                  </p>
+                  <p className="text-sm leading-relaxed mt-1" style={{ color: "var(--color-text-secondary)" }}>
+                    {exp.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
 
           <section>
             <h3 className="font-display text-lg font-bold mb-3">Project</h3>
-            <ul className="space-y-2" style={{ color: "var(--color-text-secondary)" }}>
-              <li>
-                <strong>Jarvis</strong> — Chatbot AI berbasis AIML dengan
-                Text-to-Speech (Python)
-              </li>
-              <li>
-                <strong>Mini-Whatsapp</strong> — Aplikasi chat multi-client
-                dengan Java Socket Programming
-              </li>
-              <li>
-                <strong>Chat-bot-UTS</strong> — Sistem chatbot berbasis aturan
-                untuk tugas AI (Python)
-              </li>
-            </ul>
+            <div className="space-y-3">
+              {projects.map((project) => (
+                <div key={project.title}>
+                  <h4 className="font-semibold">
+                    {project.title}
+                    <span className="font-mono text-xs font-normal" style={{ color: "var(--color-text-muted)" }}>
+                      {"  "}
+                      ({project.techs.join(", ")})
+                    </span>
+                  </h4>
+                  <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+                    {project.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
         </div>
       </div>

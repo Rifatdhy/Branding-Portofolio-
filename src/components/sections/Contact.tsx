@@ -1,25 +1,33 @@
 "use client";
 
 import { SITE, SOCIAL } from "@/lib/constants";
+import {
+  WhatsappLogo,
+  Envelope,
+  DownloadSimple,
+  GithubLogo,
+  ArrowUpRight,
+  LinkedinLogo,
+  InstagramLogo
+} from "@phosphor-icons/react";
+import { Reveal } from "../magic/Reveal";
 
 export function Contact() {
+
 
 
   return (
     <section id="kontak" className="py-28 md:py-32 bg-radial-soft">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="scroll-reveal">
+        <Reveal>
           <div className="max-w-2xl mx-auto text-center">
-            <span className="eyebrow inline-flex">
-              <span
-                className="w-1.5 h-1.5 rounded-full inline-block bg-current opacity-60"
-              />
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
               Tersedia untuk diskusi
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-tight mt-4">
               Ada project atau ide?
             </h2>
-            <div className="section-divider mx-auto" />
             <p
               className="mt-6 leading-relaxed max-w-md mx-auto text-secondary"
             >
@@ -27,9 +35,9 @@ export function Contact() {
               seputar teknologi dan pengembangan web.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="scroll-reveal">
+        <Reveal>
           <div className="max-w-2xl mx-auto mt-12">
             <div className="grid sm:grid-cols-2 gap-3">
               <a
@@ -39,9 +47,10 @@ export function Contact() {
                 className="contact-card"
               >
                 <div className="icon-box">
-                  <i
+                  <WhatsappLogo
                     aria-hidden="true"
-                    className="ph-bold ph-whatsapp-logo text-2xl text-secondary"
+                    weight="bold"
+                    className="text-2xl text-secondary"
                   />
                 </div>
                 <div className="text-left min-w-0">
@@ -54,19 +63,23 @@ export function Contact() {
                     {SITE.phone}
                   </span>
                 </div>
-                <i
+                <ArrowUpRight
                   aria-hidden="true"
-                  className="ph-bold ph-arrow-up-right text-sm ml-auto shrink-0 text-muted"
+                  weight="bold"
+                  className="text-sm ml-auto shrink-0 text-muted"
                 />
               </a>
               <a
-                href={`mailto:${SITE.email}`}
+                href={SITE.emailCompose}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="contact-card"
               >
                 <div className="icon-box">
-                  <i
+                  <Envelope
                     aria-hidden="true"
-                    className="ph-bold ph-envelope text-2xl text-secondary"
+                    weight="bold"
+                    className="text-2xl text-secondary"
                   />
                 </div>
                 <div className="text-left min-w-0">
@@ -79,9 +92,10 @@ export function Contact() {
                     {SITE.email}
                   </span>
                 </div>
-                <i
+                <ArrowUpRight
                   aria-hidden="true"
-                  className="ph-bold ph-arrow-up-right text-sm ml-auto shrink-0 text-muted"
+                  weight="bold"
+                  className="text-sm ml-auto shrink-0 text-muted"
                 />
               </a>
               <a
@@ -90,9 +104,10 @@ export function Contact() {
                 className="contact-card"
               >
                 <div className="icon-box">
-                  <i
+                  <DownloadSimple
                     aria-hidden="true"
-                    className="ph-bold ph-download-simple text-2xl text-secondary"
+                    weight="bold"
+                    className="text-2xl text-secondary"
                   />
                 </div>
                 <div className="text-left min-w-0">
@@ -105,9 +120,10 @@ export function Contact() {
                     PDF &mdash; Rifat Dhiya Ul Lail
                   </span>
                 </div>
-                <i
+                <ArrowUpRight
                   aria-hidden="true"
-                  className="ph-bold ph-arrow-up-right text-sm ml-auto shrink-0 text-muted"
+                  weight="bold"
+                  className="text-sm ml-auto shrink-0 text-muted"
                 />
               </a>
               <a
@@ -117,9 +133,10 @@ export function Contact() {
                 className="contact-card"
               >
                 <div className="icon-box">
-                  <i
+                  <GithubLogo
                     aria-hidden="true"
-                    className="ph-bold ph-github-logo text-2xl"
+                    weight="bold"
+                    className="text-2xl"
                   />
                 </div>
                 <div className="text-left min-w-0">
@@ -132,31 +149,32 @@ export function Contact() {
                     @Rifatdhy
                   </span>
                 </div>
-                <i
+                <ArrowUpRight
                   aria-hidden="true"
-                  className="ph-bold ph-arrow-up-right text-sm ml-auto shrink-0 text-muted"
+                  weight="bold"
+                  className="text-sm ml-auto shrink-0 text-muted"
                 />
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
 
-
-
-        <div className="scroll-reveal">
+        <Reveal>
           <div className="flex justify-center gap-3 mt-12">
-            {[
-              { href: SOCIAL.whatsapp, label: "WhatsApp", icon: "ph-whatsapp-logo" },
-              { href: SOCIAL.github, label: "GitHub", icon: "ph-github-logo" },
-              { href: SOCIAL.linkedin, label: "LinkedIn", icon: "ph-linkedin-logo" },
-              { href: SOCIAL.instagram, label: "Instagram", icon: "ph-instagram-logo" },
-            ].map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="social-link" aria-label={s.label}>
-                <i aria-hidden="true" className={`ph-bold ${s.icon} text-xl`} />
-              </a>
-            ))}
+            <a href={SOCIAL.whatsapp} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
+              <WhatsappLogo aria-hidden="true" weight="bold" className="text-xl" />
+            </a>
+            <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
+              <GithubLogo aria-hidden="true" weight="bold" className="text-xl" />
+            </a>
+            <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+              <LinkedinLogo aria-hidden="true" weight="bold" className="text-xl" />
+            </a>
+            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
+              <InstagramLogo aria-hidden="true" weight="bold" className="text-xl" />
+            </a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
