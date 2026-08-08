@@ -11,3 +11,8 @@ Thumbs.db
 
 .next/
 out/
+
+*.tsbuildinfo
+.playwright-mcp/
+home-mobile.png
+*.tgz
