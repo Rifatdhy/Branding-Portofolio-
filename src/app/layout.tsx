@@ -7,7 +7,6 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 import { CookieConsent } from "@/components/layout/CookieConsent";
-import { CustomCursor } from "@/components/magic/CustomCursor";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -118,7 +117,6 @@ export default function RootLayout({
         <CookieConsent />
         <Analytics />
         <SpeedInsights />
-        <CustomCursor />
       </body>
     </html>
   );
