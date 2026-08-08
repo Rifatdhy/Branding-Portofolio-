@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { SITE, SOCIAL } from "@/lib/constants";
 import {
   WhatsappLogo,
@@ -14,38 +13,6 @@ import {
 import { Reveal } from "../magic/Reveal";
 
 export function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errors, setErrors] = useState<string[]>([]);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    setErrors([]);
-
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
-    if (!res.ok || !data.success) {
-      setErrors(data.errors || ["Gagal mengirim. Coba lagi."]);
-      setStatus("error");
-      return;
-    }
-
-    setStatus("success");
-    setForm({ name: "", email: "", message: "" });
-  };
-
   return (
     <section id="kontak" className="py-28 md:py-32 bg-radial-soft">
       <div className="max-w-6xl mx-auto px-6">
@@ -186,70 +153,6 @@ export function Contact() {
                 />
               </a>
             </div>
-          </div>
-        </Reveal>
-
-        <Reveal>
-          <div className="max-w-lg mx-auto mt-12">
-            {status === "success" ? (
-              <div className="rounded-2xl p-6 text-center border" style={{ background: "var(--color-surface-card)", borderColor: "var(--color-border)" }}>
-                <Envelope weight="bold" className="text-4xl mx-auto mb-3" style={{ color: "var(--color-text-primary)" }} />
-                <p className="font-display font-semibold text-lg">Pesan terkirim!</p>
-                <p className="text-sm mt-1 text-secondary">Saya akan membalas secepatnya. Terima kasih.</p>
-                <button onClick={() => setStatus("idle")} className="btn btn-outline mt-4">
-                  Kirim pesan lain
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nama"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  minLength={2}
-                  className="form-input"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Pesan..."
-                  rows={4}
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  minLength={10}
-                  maxLength={2000}
-                  className="form-input"
-                />
-
-                {errors.length > 0 && (
-                  <div className="rounded-lg p-3 text-sm" style={{ background: "var(--color-surface-alt)", color: "var(--color-text-secondary)" }}>
-                    {errors.map((err, i) => (
-                      <p key={i}>{err}</p>
-                    ))}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="btn btn-primary w-full justify-center"
-                >
-                  {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
-                </button>
-              </form>
-            )}
           </div>
         </Reveal>
 

@@ -16,7 +16,6 @@
     "motion": "^12.7.5",
     "next": "^15.3.1",
     "next-mdx-remote": "^6.0.0",
-    "nodemailer": "^9.0.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -25,7 +24,6 @@
     "@eslint/js": "^9.26.0",
     "@tailwindcss/postcss": "^4.1.6",
     "@types/node": "^22.15.3",
-    "@types/nodemailer": "^8.0.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "autoprefixer": "^10.5.4",
