@@ -74,9 +74,11 @@ export function About() {
 
             <Reveal className="max-w-prose">
               <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                Saat ini saya aktif mengerjakan project freelance serta mendalami
-                ekosistem JavaScript &mdash; terutama Next.js dan TypeScript.
-                Sesekali saya juga merancang UI dengan Figma.
+                Saya bisa membantu di beberapa bidang: membangun website modern
+                (React, Next.js, Laravel), mengembangkan aplikasi desktop maupun
+                mobile, serta menangani infrastruktur jaringan &mdash; dari
+                konfigurasi MikroTik, Cisco, hingga troubleshooting konektivitas.
+                Saat ini saya juga aktif mendalami TypeScript dan desain UI.
               </p>
             </Reveal>
           </div>
