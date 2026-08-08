@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostSlugList, getPostContent } from "@/lib/blog";
@@ -11,14 +12,20 @@ export async function generateStaticParams() {
   return getPostSlugList().map((slug) => ({ slug }));
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostContent(slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt.slice(0, 160),
+  };
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const source = getPostContent(slug);
-
-  if (!source) notFound();
-
-  const title =
-    source.match(/^title:\s(.+)$/m)?.[1]?.trim() || slug.replace(/-/g, " ");
+  const post = getPostContent(slug);
+  if (!post) notFound();
 
   return (
     <div className="pt-28 md:pt-32 pb-24 md:pb-32">
@@ -37,16 +44,22 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
               Journal
             </span>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
-              {title}
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance text-[var(--color-text-primary)]">
+              {post.title}
             </h1>
+            {post.date && (
+              <time className="text-sm text-muted" dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString("id-ID", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            )}
           </header>
 
-          <div
-            className="prose-custom"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            <MDXRemote source={source.replace(/^---[\s\S]*?---\n/, "")} />
+          <div className="prose-custom" style={{ color: "var(--color-text-primary)" }}>
+            <MDXRemote source={post.content} />
           </div>
         </article>
       </div>

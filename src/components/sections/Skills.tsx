@@ -51,7 +51,7 @@ export function Skills() {
                     {cat.skills.map((skill, i) => (
                       <div key={skill.name} className="skill-cell" style={{ transitionDelay: `${i * 0.06}s` }}>
                         <Image
-                            src={`https://cdn.simpleicons.org/${skill.slug}`}
+                            src={`/icons/${skill.slug}.svg`}
                             alt={skill.name}
                             width={28}
                             height={28}
