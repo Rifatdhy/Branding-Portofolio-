@@ -84,6 +84,22 @@ export const projects: Project[] = [
     icon: "ph-wallet",
     gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
   },
+  {
+    title: "NodeVault",
+    description: "P2P file sharing dan music streaming terdesentralisasi — setiap laptop menjadi peer yang menyimpan filenya sendiri. Backend Java SE, frontend vanilla HTML/CSS/JS.",
+    href: "https://github.com/Rifatdhy/NodeVault",
+    techs: ["Java", "HTML5", "CSS", "JavaScript"],
+    icon: "ph-share-network",
+    gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
+  },
+  {
+    title: "TODO-List",
+    description: "Aplikasi pencatat tugas harian berbasis web, dibangun dengan React, TypeScript, Vite, dan Tailwind CSS.",
+    href: "https://github.com/Rifatdhy/TODO-List",
+    techs: ["React", "TypeScript", "Vite", "TailwindCSS"],
+    icon: "ph-check-square",
+    gradient: "135deg, #8A8782 0%, #D4D2CE 100%",
+  },
 ];
 
 export const allTechs = [
@@ -94,6 +110,9 @@ export const allTechs = [
   "TailwindCSS",
   "PHP",
   "MySQL",
+  "Java",
+  "TypeScript",
+  "Vite",
 ];
 
 export const skillCategories = [
@@ -101,6 +120,7 @@ export const skillCategories = [
     name: "Programming & Frontend",
     skills: [
       { name: "JavaScript", slug: "javascript", color: "#F7DF1E" },
+      { name: "TypeScript", slug: "typescript", color: "#3178C6" },
       { name: "React", slug: "react", color: "#61DAFB" },
       { name: "Tailwind CSS", slug: "tailwindcss", color: "#06B6D4" },
       { name: "Bootstrap", slug: "bootstrap", color: "#7952B3" },
@@ -112,6 +132,7 @@ export const skillCategories = [
     name: "Backend & Database",
     skills: [
       { name: "Laravel", slug: "laravel", color: "#FF2D20" },
+      { name: "Java", slug: "openjdk", color: "#000000" },
       { name: "PHP", slug: "php", color: "#777BB4" },
       { name: "Python", slug: "python", color: "#3776AB" },
       { name: "MySQL", slug: "mysql", color: "#4479A1" },
