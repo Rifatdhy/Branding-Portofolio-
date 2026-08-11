@@ -1,5 +1,11 @@
 import { SITE, SOCIAL } from "@/lib/constants";
 import { about, education, experiences, projects, skillCategories } from "@/lib/data";
+import {
+  WhatsappLogo,
+  At,
+  FilePdf,
+  GithubLogo,
+} from "@phosphor-icons/react/ssr";
 
 export default function CVPage() {
   return (
@@ -40,14 +46,14 @@ export default function CVPage() {
 
           <div className="mt-8 grid sm:grid-cols-2 gap-3">
             {[
-              { href: SOCIAL.whatsapp, label: "WhatsApp", value: SITE.phone, icon: "ph-whatsapp-logo" },
-              { href: SITE.emailCompose, label: "Email", value: SITE.email, icon: "ph-at" },
-              { href: "/assets/CV Rifat.pdf", label: "Download CV", value: "PDF — Rifat Dhiya Ul Lail", icon: "ph-file-pdf" },
-              { href: SOCIAL.github, label: "GitHub", value: "@Rifatdhy", icon: "ph-github-logo" },
+              { href: SOCIAL.whatsapp, label: "WhatsApp", value: SITE.phone, icon: <WhatsappLogo aria-hidden="true" weight="bold" className="text-lg text-secondary" /> },
+              { href: SITE.emailCompose, label: "Email", value: SITE.email, icon: <At aria-hidden="true" weight="bold" className="text-lg text-secondary" /> },
+              { href: "/assets/CV Rifat.pdf", label: "Download CV", value: "PDF — Rifat Dhiya Ul Lail", icon: <FilePdf aria-hidden="true" weight="bold" className="text-lg text-secondary" /> },
+              { href: SOCIAL.github, label: "GitHub", value: "@Rifatdhy", icon: <GithubLogo aria-hidden="true" weight="bold" className="text-lg text-secondary" /> },
             ].map((item) => (
               <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="cv-card">
                 <div className="flex items-center gap-3">
-                  <i aria-hidden="true" className={`ph-bold ${item.icon} text-lg`} style={{ color: "var(--color-text-secondary)" }} />
+                  {item.icon}
                   <span className="font-display font-semibold">{item.label}</span>
                 </div>
                 <span className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{item.value}</span>

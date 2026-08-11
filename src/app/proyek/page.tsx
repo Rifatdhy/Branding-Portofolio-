@@ -13,7 +13,7 @@ export default function ProyekPage() {
   const filtered =
     active === "Semua"
       ? projects
-      : projects.filter((p) => p.techs.some((t) => t === active));
+      : projects.filter((p) => p.techs.includes(active));
 
   return (
     <div className="pt-28 md:pt-36 pb-24 md:pb-32">

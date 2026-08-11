@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft } from "@phosphor-icons/react/ssr";
 
 export default function PrivacyPage() {
   return (
@@ -9,7 +10,7 @@ export default function PrivacyPage() {
           className="inline-flex items-center gap-1 text-sm font-medium mb-8 hover:opacity-60 transition-opacity"
           style={{ color: "var(--color-text-secondary)" }}
         >
-          <i className="ph-bold ph-arrow-left" />
+          <ArrowLeft aria-hidden="true" weight="bold" className="text-lg" />
           Kembali ke Beranda
         </Link>
 

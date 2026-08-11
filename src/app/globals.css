@@ -182,12 +182,11 @@ nav, .edu-card, .stat-card, .cv-card, section {
   border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
-  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+  transition: border-color 0.3s ease,
               box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .project-card:hover {
   border-color: var(--color-border-hover);
-  transform: translateY(-4px);
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.25),
               0 0 0 1px var(--color-border-hover) inset,
               0 0 0 2px var(--color-surface) inset;
@@ -443,19 +442,6 @@ nav, .edu-card, .stat-card, .cv-card, section {
   filter: blur(0);
 }
 
-/* === HERO ENTRY === */
-.hero-item {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: heroFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-play-state: paused;
-}
-.hero-animate { animation-play-state: running; }
-@keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* === LINK MICRO-INTERACTIONS === */
 .border-default { border-color: var(--color-border); }
 .bg-surface-alt { background-color: var(--color-surface-alt); }
@@ -556,7 +542,6 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; filter: none !important; }
-  .hero-item { opacity: 1 !important; transform: none !important; animation: none !important; }
 }
 @media print {
   nav, #progress-bar, .btn { display: none !important; }

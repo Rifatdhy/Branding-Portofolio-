@@ -50,13 +50,21 @@ export function Projects() {
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <AnimatePresence>
-            {filtered.map((project, i) => (
-              <ProjectCard key={project.title} project={project} index={i} />
-            ))}
-          </AnimatePresence>
-        </div>
+        {filtered.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-lg text-muted">
+              Tidak ada proyek dengan filter tersebut.
+            </p>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6">
+            <AnimatePresence>
+              {filtered.map((project, i) => (
+                <ProjectCard key={project.title} project={project} index={i} />
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
       </div>
     </section>
   );
