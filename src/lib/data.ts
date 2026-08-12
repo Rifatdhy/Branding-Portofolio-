@@ -122,6 +122,7 @@ export const skillCategories = [
       { name: "JavaScript", slug: "javascript", color: "#F7DF1E" },
       { name: "TypeScript", slug: "typescript", color: "#3178C6" },
       { name: "React", slug: "react", color: "#61DAFB" },
+      { name: "Next.js", slug: "nextjs", color: "#FFFFFF" },
       { name: "Tailwind CSS", slug: "tailwindcss", color: "#06B6D4" },
       { name: "Bootstrap", slug: "bootstrap", color: "#7952B3" },
       { name: "HTML5", slug: "html5", color: "#E34F26" },
@@ -132,8 +133,10 @@ export const skillCategories = [
     name: "Backend & Database",
     skills: [
       { name: "Laravel", slug: "laravel", color: "#FF2D20" },
+      { name: "Node.js", slug: "nodejs", color: "#5FA04E" },
       { name: "Java", slug: "openjdk", color: "#000000" },
       { name: "PHP", slug: "php", color: "#777BB4" },
+      { name: "PostgreSQL", slug: "postgresql", color: "#4169E1" },
       { name: "Python", slug: "python", color: "#3776AB" },
       { name: "MySQL", slug: "mysql", color: "#4479A1" },
       { name: "REST API", slug: "insomnia", color: "#4000BF" },
@@ -153,6 +156,9 @@ export const skillCategories = [
     skills: [
       { name: "Git", slug: "git", color: "#F05032" },
       { name: "GitHub", slug: "github", color: "#181717" },
+      { name: "Docker", slug: "docker", color: "#2496ED" },
+      { name: "Express", slug: "express", color: "#FFFFFF" },
+      { name: "Prisma", slug: "prisma", color: "#FFFFFF" },
       { name: "Postman", slug: "postman", color: "#FF6C37" },
     ],
   },

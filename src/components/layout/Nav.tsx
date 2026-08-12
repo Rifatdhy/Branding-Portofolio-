@@ -67,7 +67,7 @@ export function Nav() {
   const active = useActiveSection();
 
   return (
-    <nav className="fixed top-3 inset-x-0 z-50 px-4">
+    <nav aria-label="Navigasi utama" className="fixed top-3 inset-x-0 z-50 px-4">
       <div className="max-w-3xl mx-auto bg-[var(--color-surface-card)]/80 backdrop-blur-xl border border-[var(--color-border)] rounded-full flex items-center justify-between gap-4 pl-6 pr-2 py-2 shadow-[var(--shadow-tint)]">
         <Link href="/" className="font-display font-bold text-lg tracking-tight text-[var(--color-text-primary)]">
           RifatDhiya
@@ -105,8 +105,9 @@ export function Nav() {
           <button
             className="md:hidden text-[var(--color-text-primary)] hover:bg-[var(--color-brand-50)] transition-colors p-2 rounded-full"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={open ? "Tutup menu" : "Buka menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             {open ? (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -117,8 +118,11 @@ export function Nav() {
         </div>
       </div>
 
-      {open && (
-        <div className="md:hidden mt-2 max-w-3xl mx-auto bg-[var(--color-surface-card)]/95 backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-3 shadow-[var(--shadow-card)]">
+      <div
+        id="mobile-navigation"
+        hidden={!open}
+        className="md:hidden mt-2 max-w-3xl mx-auto bg-[var(--color-surface-card)]/95 backdrop-blur-xl border border-[var(--color-border)] rounded-3xl p-3 shadow-[var(--shadow-card)]"
+      >
           <div className="flex flex-col">
             {links.map((link) => (
               <Link
