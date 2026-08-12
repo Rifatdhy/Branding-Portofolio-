@@ -1,10 +1,10 @@
 export const SITE = {
   name: "Rifat Dhiya Ul Lail",
   monogram: "RD",
-  title: "Web & Network Engineer",
+  title: "Web, App & Network Engineer",
   tagline: "Nulis kode, ngulik jaringan",
   description:
-    "Portofolio Rifat Dhiya Ul Lail — Mahasiswa Teknik Informatika Jakarta Global University, Web & Network Engineer.",
+    "Portofolio Rifat Dhiya Ul Lail — Mahasiswa Teknik Informatika Jakarta Global University dengan kemampuan seimbang di pengembangan web, aplikasi desktop & mobile, jaringan komputer, dan IT support.",
   url: "https://rifatdhy.github.io",
   email: "rifatdhiyaullail@gmail.com",
   emailCompose:
@@ -19,5 +19,7 @@ export const SOCIAL = {
   github: "https://github.com/Rifatdhy",
   linkedin: "https://linkedin.com/in/rifatdhiyaullail",
   instagram: "https://instagram.com/rifatdhy",
-  whatsapp: "https://wa.me/6285781354857",
+  whatsapp:
+    "https://wa.me/6285781354857?text=Halo%20Rifat%2C%20saya%20melihat%20portofoliomu%20dan%20ingin%20berdiskusi%20tentang%20sebuah%20project.",
+  whatsappPlain: "https://wa.me/6285781354857",
 };

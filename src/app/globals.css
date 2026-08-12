@@ -195,56 +195,6 @@ nav, .edu-card, .stat-card, .cv-card, section {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08),
               0 0 0 1px rgba(200, 200, 210, 0.6) inset;
 }
-.project-thumb {
-  height: 100%;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.project-thumb i {
-  font-size: 3.5rem;
-  color: var(--color-text-muted);
-  opacity: 0.4;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.project-card:hover .project-thumb i {
-  opacity: 0.7;
-  transform: scale(1.05);
-}
-.project-thumb .tech-stack {
-  position: absolute;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  background: rgba(20, 20, 24, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-}
-.project-thumb .tech-stack img {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.2s ease;
-}
-.project-thumb .tech-stack img:hover { transform: translateY(-2px); }
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  transition: gap 0.2s ease;
-}
-.project-link:hover { gap: 0.75rem; }
-
 /* === SKILL CELLS === */
 .skill-cell {
   background: var(--color-surface-card);
@@ -275,7 +225,8 @@ nav, .edu-card, .stat-card, .cv-card, section {
   height: 1.75rem;
   filter: grayscale(1) contrast(0.8);
   opacity: 0.9;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+  will-change: transform;
 }
 .skill-cell:hover img, .skill-cell:hover svg {
   transform: scale(1.1);
@@ -448,11 +399,6 @@ nav, .edu-card, .stat-card, .cv-card, section {
 .text-secondary { color: var(--color-text-secondary); }
 .text-muted { color: var(--color-text-muted); }
 
-.project-link i:first-child {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.project-link:hover i:first-child { transform: rotate(-8deg); }
-
 /* === SOFT RADIAL BACKGROUND === */
 .bg-radial-soft {
   background: radial-gradient(1200px 600px at 50% -10%, var(--glow-radial, rgba(245, 245, 247, 0.05)), transparent 60%);
@@ -542,6 +488,11 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; filter: none !important; }
+  .skill-cell { opacity: 1 !important; transform: none !important; }
+  .skill-cell:hover { transform: none; box-shadow: none; }
+  .skill-cell img, .skill-cell svg { transform: none; filter: grayscale(0) contrast(1) brightness(1.2); }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
+  .project-card, .contact-card, .stat-card, .edu-card, .cv-card { box-shadow: none !important; }
 }
 @media print {
   nav, #progress-bar, .btn { display: none !important; }

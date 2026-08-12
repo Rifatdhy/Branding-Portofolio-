@@ -55,30 +55,62 @@ export function About() {
                 className="mt-6 leading-relaxed"
                 style={{ color: "var(--color-text-primary)" }}
               >
-                Halo, saya Rifat &mdash; mahasiswa Teknik Informatika di{" "}
-                <strong>{SITE.location}</strong> yang berfokus pada pengembangan
-                web. Dari membangun aplikasi dengan Laravel hingga eksplorasi
-                React, saya menikmati setiap proses belajar dan mengulik hal
-                baru.
+                Halo, saya Rifat, mahasiswa S1 Teknik Informatika di Jakarta
+                Global University dengan latar belakang Teknik Komputer dan
+                Jaringan. Saya memiliki ketertarikan pada software development
+                dan infrastruktur teknologi, dengan pengalaman mengembangkan
+                aplikasi sekaligus memahami bagaimana sistem dan jaringan di
+                baliknya bekerja.
               </p>
             </Reveal>
 
             <Reveal className="max-w-prose">
               <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                Di luar pengembangan web, saya juga mendalami jaringan komputer
-                &mdash; routing, switching, dan administrasi network. Saya cukup
-                sering bekerja dengan MikroTik dan Cisco untuk kebutuhan lab
-                maupun project lapangan.
+                Di bidang software development, saya berfokus pada
+                pengembangan aplikasi web dan terus memperdalam ekosistem
+                JavaScript/TypeScript. Saya terbiasa menggunakan React dan
+                Next.js untuk membangun antarmuka web yang responsif dan
+                modern, serta Tailwind CSS untuk pengembangan UI yang
+                konsisten dan efisien. Untuk kebutuhan backend, saya memiliki
+                pengalaman menggunakan Laravel dan Node.js, termasuk membangun
+                REST API, mengelola database, serta mengintegrasikan frontend
+                dengan layanan backend. Saya juga memiliki pengalaman
+                mengembangkan aplikasi desktop menggunakan Java dan aplikasi
+                mobile.
               </p>
             </Reveal>
 
             <Reveal className="max-w-prose">
               <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                Saya bisa membantu di beberapa bidang: membangun website modern
-                (React, Next.js, Laravel), mengembangkan aplikasi desktop maupun
-                mobile, serta menangani infrastruktur jaringan &mdash; dari
-                konfigurasi MikroTik, Cisco, hingga troubleshooting konektivitas.
-                Saat ini saya juga aktif mendalami TypeScript dan desain UI.
+                Selain pengembangan aplikasi, saya memiliki dasar yang kuat di
+                bidang jaringan komputer dan IT infrastructure. Dengan latar
+                belakang Teknik Komputer dan Jaringan, saya memahami konsep
+                routing, switching, TCP/IP, serta konfigurasi dan administrasi
+                jaringan menggunakan MikroTik dan Cisco. Saya juga terbiasa
+                melakukan troubleshooting perangkat, konektivitas jaringan,
+                serta administrasi sistem berbasis Linux.
+              </p>
+            </Reveal>
+
+            <Reveal className="max-w-prose">
+              <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                Dalam proses pengembangan, saya menggunakan Git dan GitHub
+                untuk version control serta memahami workflow pengembangan dan
+                deployment aplikasi. Saya juga mulai mendalami Docker, database
+                seperti MySQL dan PostgreSQL, serta praktik pengembangan
+                aplikasi yang lebih terstruktur dan scalable.
+              </p>
+            </Reveal>
+
+            <Reveal className="max-w-prose">
+              <p className="mt-4 leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                Saya memiliki rasa ingin tahu yang tinggi dan senang
+                mempelajari teknologi baru melalui proyek akademik maupun
+                personal. Saat ini, saya terus meningkatkan kemampuan di bidang
+                TypeScript, modern full-stack development, UI/UX, cloud dan
+                deployment, serta eksplorasi berbagai tools dan teknologi yang
+                dapat menghasilkan aplikasi yang tidak hanya berfungsi dengan
+                baik, tetapi juga memiliki pengalaman pengguna yang optimal.
               </p>
             </Reveal>
           </div>

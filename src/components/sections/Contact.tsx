@@ -28,8 +28,9 @@ export function Contact() {
             <p
               className="mt-6 leading-relaxed max-w-md mx-auto text-secondary"
             >
-              Selalu terbuka buat diskusi, kolaborasi, atau sekadar ngobrol
-              seputar teknologi dan pengembangan web.
+              Terbuka untuk diskusi, kolaborasi, atau sekadar mengobrol
+              seputar teknologi &mdash; pengembangan web, aplikasi desktop dan
+              mobile, jaringan, hingga IT support.
             </p>
           </div>
         </Reveal>
@@ -41,7 +42,7 @@ export function Contact() {
                 href={SOCIAL.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card"
+                className="group contact-card"
               >
                 <div className="icon-box">
                   <WhatsappLogo
@@ -63,14 +64,14 @@ export function Contact() {
                 <ArrowUpRight
                   aria-hidden="true"
                   weight="bold"
-                  className="text-sm ml-auto shrink-0 text-muted"
+                  className="text-sm ml-auto shrink-0 text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
               <a
                 href={SITE.emailCompose}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card"
+                className="group contact-card"
               >
                 <div className="icon-box">
                   <Envelope
@@ -92,13 +93,13 @@ export function Contact() {
                 <ArrowUpRight
                   aria-hidden="true"
                   weight="bold"
-                  className="text-sm ml-auto shrink-0 text-muted"
+                  className="text-sm ml-auto shrink-0 text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
               <a
                 href="/assets/CV%20Rifat.pdf"
                 download
-                className="contact-card"
+                className="group contact-card"
               >
                 <div className="icon-box">
                   <DownloadSimple
@@ -120,14 +121,14 @@ export function Contact() {
                 <ArrowUpRight
                   aria-hidden="true"
                   weight="bold"
-                  className="text-sm ml-auto shrink-0 text-muted"
+                  className="text-sm ml-auto shrink-0 text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
               <a
                 href={SOCIAL.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card"
+                className="group contact-card"
               >
                 <div className="icon-box">
                   <GithubLogo
@@ -149,7 +150,7 @@ export function Contact() {
                 <ArrowUpRight
                   aria-hidden="true"
                   weight="bold"
-                  className="text-sm ml-auto shrink-0 text-muted"
+                  className="text-sm ml-auto shrink-0 text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
             </div>

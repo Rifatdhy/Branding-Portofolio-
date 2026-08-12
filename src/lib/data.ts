@@ -21,7 +21,7 @@ export interface Experience {
   description: string;
 }
 
-export const about = "Mahasiswa Teknik Informatika di Jakarta Global University dengan latar belakang Teknik Komputer dan Jaringan. Terampil dalam pengembangan web dan software, jaringan, serta IT support, dengan pengalaman langsung membangun aplikasi web responsif menggunakan React, Laravel, Tailwind CSS, dan MySQL. Familiar dengan administrasi Linux, konfigurasi jaringan, dan troubleshooting. Suka belajar teknologi baru dan membuat solusi praktis lewat project akademik maupun personal.";
+export const about = "Mahasiswa S1 Teknik Informatika di Jakarta Global University dengan latar belakang Teknik Komputer dan Jaringan. Memiliki kompetensi dan pengalaman di bidang pengembangan web, aplikasi desktop dan mobile, jaringan komputer, serta IT support. Terampil dalam mengembangkan aplikasi web responsif dan aplikasi desktop, serta memiliki pemahaman yang baik mengenai administrasi Linux, konfigurasi jaringan, dan troubleshooting perangkat maupun sistem jaringan. Adaptif terhadap perkembangan teknologi, memiliki kemauan belajar yang tinggi, serta berorientasi pada pengembangan solusi teknologi yang efektif dan praktis melalui proyek akademik maupun personal.";
 
 export const education: Education[] = [
   {

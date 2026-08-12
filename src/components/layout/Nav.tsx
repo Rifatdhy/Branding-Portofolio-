@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/#tentang", label: "Tentang" },
-  { href: "/#proyek", label: "Proyek" },
-  { href: "/#keahlian", label: "Keahlian" },
-  { href: "/#kontak", label: "Kontak" },
+  { href: "/#tentang", label: "Tentang", section: "tentang" },
+  { href: "/#proyek", label: "Proyek", section: "proyek" },
+  { href: "/#keahlian", label: "Keahlian", section: "keahlian" },
+  { href: "/#kontak", label: "Kontak", section: "kontak" },
 ];
 
 function useTheme() {
@@ -27,9 +28,43 @@ function useTheme() {
   return { theme, toggle };
 }
 
+function useActiveSection() {
+  const [active, setActive] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActive(null);
+      return;
+    }
+    const sections = links
+      .map((l) => document.getElementById(l.section))
+      .filter((el): el is HTMLElement => !!el);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  return active;
+}
+
 export function Nav() {
   const [open, setOpen] = useState(false);
   const { theme, toggle } = useTheme();
+  const active = useActiveSection();
 
   return (
     <nav className="fixed top-3 inset-x-0 z-50 px-4">
@@ -42,7 +77,12 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-2 rounded-full text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-brand-50)] transition-colors"
+              aria-current={active === link.section ? "true" : undefined}
+              className={`px-4 py-2 rounded-full text-sm transition-colors ${
+                active === link.section
+                  ? "text-[var(--color-text-primary)] bg-[var(--color-brand-50)]"
+                  : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-brand-50)]"
+              }`}
             >
               {link.label}
             </Link>

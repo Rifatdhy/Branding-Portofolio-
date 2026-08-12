@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: SITE.description,
   },
   keywords:
-    "Rifat Dhiya Ul Lail, portfolio, web developer, teknik informatika, Jakarta Global University, frontend, react, nextjs, network",
+    "Rifat Dhiya Ul Lail, portfolio, web developer, aplikasi desktop, aplikasi mobile, jaringan komputer, IT support, teknik informatika, Jakarta Global University, frontend, backend, react, nextjs, laravel, java, mikrotik, cisco",
   authors: [{ name: SITE.name }],
 };
 
@@ -59,11 +59,15 @@ const jsonLd = {
   almaMater: "Jakarta Global University",
   knowsAbout: [
     "Web Development",
+    "Desktop Application Development",
+    "Mobile Development",
     "Network Engineering",
+    "IT Support",
     "React",
     "Next.js",
     "TypeScript",
     "Laravel",
+    "Java",
     "MikroTik",
     "Cisco",
   ],

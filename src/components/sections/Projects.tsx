@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, LayoutGroup } from "motion/react";
 import { projects } from "@/lib/data";
 import { ProjectCard } from "../magic/ProjectCard";
 import { Reveal } from "../magic/Reveal";
@@ -58,11 +58,13 @@ export function Projects() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 gap-6">
-            <AnimatePresence>
-              {filtered.map((project, i) => (
-                <ProjectCard key={project.title} project={project} index={i} />
-              ))}
-            </AnimatePresence>
+            <LayoutGroup>
+              <AnimatePresence>
+                {filtered.map((project, i) => (
+                  <ProjectCard key={project.title} project={project} index={i} />
+                ))}
+              </AnimatePresence>
+            </LayoutGroup>
           </div>
         )}
       </div>
